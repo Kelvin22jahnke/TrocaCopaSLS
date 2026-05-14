@@ -3,42 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Troca Copa SLS</title>
+  <title>Troca Copa SLS - Troque Figurinhas da Copa do Mundo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>⚽ Troca Copa SLS 🏆</h1>
-    <p>Junte-se à febre da Copa! Troque figurinhas da Copa do Mundo em São Lourenço do Sul 🇧🇷</p>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-section">
+        <span class="logo">⚽</span>
+        <div class="logo-text">
+          <h1>Troca Copa SLS</h1>
+          <p class="subtitle">Junte-se a febre da Copa! Troque figurinhas da Copa do Mundo em São Lourenço do Sul 🇧🇷</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <input type="text" class="search-box" placeholder="Buscar usuários ou figurinhas...">
+        <button class="notification-btn">🔔</button>
+        <div class="user-profile">
+          <img src="https://ui-avatars.com/api/?name=Joao+Silva&background=FF5B8A&color=fff" alt="Perfil">
+          <span>João</span>
+          <span class="level">Nível 12</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link active" onclick="switchTab('dashboard')">📊 Dashboard</a></li>
+        <li><a href="#" class="nav-link" onclick="switchTab('figurinhas')">🏅 Minhas Figurinhas</a></li>
+        <li><a href="#" class="nav-link" onclick="switchTab('trocas')">⇄ Trocas</a></li>
+        <li><a href="#" class="nav-link" onclick="switchTab('ranking')">🏆 Ranking</a></li>
+        <li><a href="#" class="nav-link" onclick="switchTab('eventos')">🎉 Eventos</a></li>
+        <li><a href="#" class="nav-link" onclick="switchTab('como-funciona')">❓ Como Funciona</a></li>
+      </ul>
+      <button class="announce-btn" onclick="openAnnounceModal()">+ Anunciar Figurinha</button>
+    </nav>
   </header>
 
-  <nav>
-    <button onclick="showSection('figurinhas')">🏆 Figurinhas</button>
-    <button onclick="showSection('locais')">📍 Locais</button>
-    <button onclick="showSection('adicionar')">➕ Adicionar</button>
-  </nav>
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="tab-content active">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🏅</div>
+          <div class="stat-content">
+            <span class="stat-number">120</span>
+            <span class="stat-label">Coletadas</span>
+          </div>
+          <span class="stat-title">Minhas Figurinhas</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-content">
+            <span class="stat-number">32</span>
+            <span class="stat-label">Para completar</span>
+          </div>
+          <span class="stat-title">Faltam</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⇄</div>
+          <div class="stat-content">
+            <span class="stat-number">0</span>
+            <span class="stat-label">No total</span>
+          </div>
+          <span class="stat-title">Trocas Realizadas</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🥇</div>
+          <div class="stat-content">
+            <span class="stat-number">4º</span>
+            <span class="stat-label">Entre 156 usuários</span>
+          </div>
+          <span class="stat-title">Rank Local</span>
+        </div>
+      </div>
 
-  <main>
-    <section id="figurinhas" class="section">
-      <h2>🏆 Figurinhas Disponíveis para Troca</h2>
-      <div id="lista-figurinhas"></div>
+      <div class="content-wrapper">
+        <!-- Left Content -->
+        <div class="main-content">
+          <!-- Featured Section -->
+          <section class="featured-section">
+            <div class="section-header">
+              <h2>🔥 Figurinhas em Destaque para Troca</h2>
+              <a href="#" class="see-all">Ver todas →</a>
+            </div>
+            <div class="cards-carousel">
+              <div id="featured-cards"></div>
+            </div>
+          </section>
+
+          <!-- Recommended Section -->
+          <section class="recommended-section">
+            <div class="section-header">
+              <h2>❤️ Trocas Recomendadas para Você</h2>
+              <a href="#" class="see-all">Ver todas →</a>
+            </div>
+            <div class="recommendations-grid">
+              <div id="recommendations"></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar">
+          <!-- Recent Activity -->
+          <div class="sidebar-card">
+            <h3>⚡ Atividade Recente</h3>
+            <div id="recent-activity"></div>
+            <a href="#" class="see-all-link">Ver todas atividades →</a>
+          </div>
+
+          <!-- Next Event -->
+          <div class="sidebar-card">
+            <h3>📅 Próximo Evento</h3>
+            <div class="event-box">
+              <div class="event-icon">🤝</div>
+              <h4>Encontro de Trocas</h4>
+              <p class="event-location">Praça Central de São Lourenço do Sul</p>
+              <p class="event-date">25/05/2024 às 15:00</p>
+              <button class="participate-btn">🎟️ Quero Participar</button>
+              <span class="participant-count">+32</span>
+            </div>
+          </div>
+
+          <!-- Collector Tips -->
+          <div class="sidebar-card">
+            <h3>💡 Dica do Colecionador</h3>
+            <div class="tip-box">
+              <p>Participe dos encontros presenciais e aumente suas chances de completar sua coleção!</p>
+              <img src="https://via.placeholder.com/100" alt="Trophy" class="tip-image">
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <section id="locais" class="section hidden">
-      <h2>📍 Locais de Troca em São Lourenço do Sul</h2>
-      <div id="lista-locais"></div>
+    <!-- Other Sections (to be implemented) -->
+    <section id="figurinhas" class="tab-content">
+      <h2>Minhas Figurinhas</h2>
+      <div id="my-cards"></div>
     </section>
 
-    <section id="adicionar" class="section hidden">
-      <h2>➕ Adicione Sua Figurinha à Coleção</h2>
-      <form id="form-figurinha">
-        <input type="text" id="nome" placeholder="Nome da Figurinha" required>
-        <input type="number" id="quantidade" placeholder="Quantidade" required>
-        <input type="text" id="usuario" placeholder="Seu Nome" required>
-        <button type="submit">Adicionar Figurinha</button>
-      </form>
+    <section id="trocas" class="tab-content">
+      <h2>Minhas Trocas</h2>
+      <div id="my-trades"></div>
+    </section>
+
+    <section id="ranking" class="tab-content">
+      <h2>Ranking Local</h2>
+      <div id="ranking-list"></div>
+    </section>
+
+    <section id="eventos" class="tab-content">
+      <h2>Eventos</h2>
+      <div id="events-list"></div>
+    </section>
+
+    <section id="como-funciona" class="tab-content">
+      <h2>Como Funciona</h2>
+      <div class="how-it-works">
+        <p>Conteúdo sobre como funciona o sistema...</p>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Junte-se à nossa comunidade!</h4>
+        <p>Mais de 500 colecionadores ativos em São Lourenço do Sul</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" class="social-btn whatsapp">📱 Grupo WhatsApp</a>
+        <a href="#" class="social-btn instagram">📷 Instagram</a>
+        <a href="#" class="social-btn facebook">👍 Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Announcing -->
+  <div id="announceModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeAnnounceModal()">&times;</span>
+      <h2>Anunciar Figurinha</h2>
+      <form id="announce-form">
+        <input type="text" id="figurinha-nome" placeholder="Nome da Figurinha" required>
+        <input type="text" id="figurinha-jogador" placeholder="Nome do Jogador" required>
+        <select id="figurinha-pais" required>
+          <option value="">Selecione o País</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Argentina">Argentina</option>
+          <option value="França">França</option>
+          <option value="Alemanha">Alemanha</option>
+        </select>
+        <input type="number" id="figurinha-duplicatas" placeholder="Quantas duplicatas?" required>
+        <textarea id="figurinha-descricao" placeholder="Descrição/Observações"></textarea>
+        <button type="submit" class="btn-primary">Anunciar</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

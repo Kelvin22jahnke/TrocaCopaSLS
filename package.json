@@ -8,12 +8,18 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "playwright": "^1.60.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": ["copa", "figurinhas", "troca", "sao-lourenco-do-sul"],
+  "keywords": [
+    "copa",
+    "figurinhas",
+    "troca",
+    "sao-lourenco-do-sul"
+  ],
   "author": "",
   "license": "ISC"
 }
