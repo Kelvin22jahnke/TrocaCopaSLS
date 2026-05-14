@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Troca Copa SLS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>⚽ Troca Copa SLS 🏆</h1>
+    <p>Junte-se à febre da Copa! Troque figurinhas da Copa do Mundo em São Lourenço do Sul 🇧🇷</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('figurinhas')">🏆 Figurinhas</button>
+    <button onclick="showSection('locais')">📍 Locais</button>
+    <button onclick="showSection('adicionar')">➕ Adicionar</button>
+  </nav>
+
+  <main>
+    <section id="figurinhas" class="section">
+      <h2>🏆 Figurinhas Disponíveis para Troca</h2>
+      <div id="lista-figurinhas"></div>
+    </section>
+
+    <section id="locais" class="section hidden">
+      <h2>📍 Locais de Troca em São Lourenço do Sul</h2>
+      <div id="lista-locais"></div>
+    </section>
+
+    <section id="adicionar" class="section hidden">
+      <h2>➕ Adicione Sua Figurinha à Coleção</h2>
+      <form id="form-figurinha">
+        <input type="text" id="nome" placeholder="Nome da Figurinha" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" required>
+        <input type="text" id="usuario" placeholder="Seu Nome" required>
+        <button type="submit">Adicionar Figurinha</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

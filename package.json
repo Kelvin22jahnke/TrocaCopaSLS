@@ -1,0 +1,19 @@
+{
+  "name": "trocacopasls",
+  "version": "1.0.0",
+  "description": "Site para troca de figurinhas da Copa do Mundo em São Lourenço do Sul",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["copa", "figurinhas", "troca", "sao-lourenco-do-sul"],
+  "author": "",
+  "license": "ISC"
+}
