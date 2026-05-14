@@ -798,6 +798,7 @@ body {
 }
 
 /* RESPONSIVE */
+/* Tablet (até 1024px) */
 @media (max-width: 1024px) {
   .content-wrapper {
     grid-template-columns: 1fr;
@@ -810,35 +811,385 @@ body {
   .search-box {
     width: 200px;
   }
+
+  .player-card {
+    width: 180px;
+  }
+
+  .player-card .player-image {
+    width: 120px;
+    height: 140px;
+  }
 }
 
+/* Mobile (até 768px) */
 @media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-content {
+    margin-bottom: 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo-text .subtitle {
+    font-size: 0.7rem;
+    display: none;
+  }
+
+  .search-box {
+    width: 200px;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .user-profile span:nth-child(3) {
+    display: none;
+  }
+
   .nav-menu {
     flex-wrap: wrap;
+    gap: 0;
   }
 
   .nav-link {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
 
   .announce-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .main-container {
+    margin: 1rem auto;
+    padding: 0 0.75rem;
   }
 
   .stats-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .featured-section,
+  .recommended-section,
+  .sidebar-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .see-all {
+    font-size: 0.8rem;
+  }
+
+  #featured-cards {
+    gap: 1rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0;
+  }
+
+  .player-card {
+    width: 150px;
+    padding: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .player-card .player-image {
+    width: 100px;
+    height: 120px;
+    margin: 0.75rem auto 0.5rem;
+  }
+
+  .player-card .level,
+  .player-card .position {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .player-card .player-name {
+    font-size: 0.9rem;
+  }
+
+  .player-card .player-country {
+    font-size: 0.8rem;
   }
 
   .recommendations-grid {
     grid-template-columns: 1fr;
   }
 
+  .recommendation-card {
+    padding: 1rem;
+  }
+
+  .sidebar {
+    gap: 1rem;
+  }
+
+  .sidebar-card {
+    padding: 1rem;
+  }
+
+  .sidebar-card h3 {
+    font-size: 1rem;
+  }
+
+  .activity-item {
+    padding: 0.5rem 0;
+  }
+
+  .activity-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .activity-content {
+    font-size: 0.85rem;
+  }
+
+  .activity-action {
+    font-size: 0.75rem;
+  }
+
+  .event-box {
+    padding: 1rem;
+  }
+
+  .event-icon {
+    font-size: 1.5rem;
+  }
+
+  .event-box h4 {
+    font-size: 0.95rem;
+  }
+
+  .participate-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
   .footer-content {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile Pequeno (até 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header-content {
+    margin-bottom: 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .search-box {
+    width: 150px;
+    font-size: 0.8rem;
+  }
+
+  .notification-btn {
+    font-size: 1.2rem;
+  }
+
+  .user-profile {
+    padding: 0.4rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .user-profile img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-menu {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .announce-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .featured-section,
+  .recommended-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1rem;
+  }
+
+  .featured-section::after,
+  .recommended-section::after {
+    content: none;
+  }
+
+  #featured-cards {
+    gap: 0.75rem;
+  }
+
+  .player-card {
+    width: 130px;
+    padding: 0.6rem;
+  }
+
+  .player-card .player-image {
+    width: 90px;
+    height: 110px;
+    margin: 0.5rem auto 0.4rem;
+  }
+
+  .player-card .level,
+  .player-card .position {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .player-card .player-name {
+    font-size: 0.85rem;
+  }
+
+  .player-card .player-country {
+    font-size: 0.75rem;
+  }
+
+  .player-card .country-flag {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+
+  .recommendation-card {
+    padding: 0.75rem;
+  }
+
+  .recommendation-card .user-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sidebar-card {
+    padding: 0.75rem;
+  }
+
+  .sidebar-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .footer {
+    padding: 1rem 0.75rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+  }
+
+  .social-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
   }
 }
 
