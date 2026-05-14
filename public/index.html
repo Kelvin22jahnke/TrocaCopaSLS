@@ -2,9 +2,44 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="Junte-se a febre da Copa! Troque figurinhas da Copa do Mundo em São Lourenço do Sul">
+  <meta name="theme-color" content="#5B47A3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Troca Copa SLS">
+  <meta name="application-name" content="Troca Copa SLS">
+  <meta name="msapplication-TileColor" content="#5B47A3">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%235B47A3' width='180' height='180' rx='40'/><text x='50%' y='50%' font-size='96' fill='white' text-anchor='middle' dy='.35em'>⚽</text></svg>">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%235B47A3' width='100' height='100'/><text x='50%' y='50%' font-size='56' text-anchor='middle' dy='.35em'>⚽</text></svg>">
+  
   <title>Troca Copa SLS - Troque Figurinhas da Copa do Mundo</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* App-like appearance adjustments */
+    @supports (padding: max(0px)) {
+      body {
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      .header {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -209,5 +244,37 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(() => {
+          console.log('Service Worker registered successfully');
+        }).catch((err) => {
+          console.log('Service Worker registration failed:', err);
+        });
+      });
+    }
+    
+    // Install prompt for add to home screen
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      console.log('PWA install prompt available');
+    });
+    
+    // Auto-show install prompt after 3 seconds on mobile
+    window.addEventListener('load', () => {
+      if (/mobile|android|iphone|ipad|phone/i.test(navigator.userAgent)) {
+        setTimeout(() => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+          }
+        }, 3000);
+      }
+    });
+  </script>
 </body>
 </html>
